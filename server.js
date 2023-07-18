@@ -9,9 +9,11 @@ const PORT = process.env.PORT || 3001;
 // Create an Express application
 const app = express();
 
-app.use(express.static('public'));
+
+
 
 app.use(express.json());
+app.use(express.static('public'));
 app.use(htmlRoutes);
 app.use(apiRoutes)
 
