@@ -1,5 +1,5 @@
 const routes = require('express').Router();
-const fs = require('fs').promises;
+const fs = require('fs');
 
 routes.get('/api/notes', async (req, res) => {
   try {

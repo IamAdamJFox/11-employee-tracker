@@ -11,9 +11,9 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) =>
-res.sendFile(path.join(__dirname, '/public/assets/index.html'))
-);
+app.use(express.json());
+app.use(htmlRoutes);
+app.use(apiRoutes)
 
 
 // Start the server
