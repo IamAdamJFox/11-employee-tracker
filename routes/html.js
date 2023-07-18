@@ -1,19 +1,11 @@
 const express = require('express');
 const path = require('path');
 
-const routes = express.Router();
+const router = express.Router();
 
-// Serve static files from the 'public' directory
-routes.use(express.static(path.join(__dirname, '../public')));
-
-// Route for the homepage
-routes.get('/', (req, res) => {
-  res.sendFile('index.html');
+router.get('/', (req, res) => {
+  const filePath = path.join(__dirname, 'index.html');
+  res.sendFile(filePath);
 });
 
-// Route for the notes page
-routes.get('/notes', (req, res) => {
-  res.sendFile('notes.html');
-});
-
-module.exports = routes;
+module.exports = router;
